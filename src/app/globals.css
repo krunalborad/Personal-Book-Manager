@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-parchment/10;
+  }
+
+  body {
+    @apply bg-ink bg-grain;
+    background-size: 18px 18px;
+  }
+
+  /* Visible keyboard focus everywhere, styled to match the palette */
+  :focus-visible {
+    outline: 2px solid theme("colors.gold.DEFAULT");
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-sm px-5 py-2.5 font-body text-sm font-semibold tracking-wide transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-gold text-ink hover:bg-gold-light;
+  }
+
+  .btn-ghost {
+    @apply btn border border-parchment/30 text-ivory hover:border-gold hover:text-gold;
+  }
+
+  .field-label {
+    @apply mb-1.5 block font-mono text-xs uppercase tracking-[0.15em] text-parchment/60;
+  }
+
+  .field-input {
+    @apply w-full rounded-sm border border-parchment/20 bg-ink-light px-3.5 py-2.5 font-body text-ivory placeholder:text-parchment/30 focus:border-gold;
+  }
+
+  .stamp {
+    @apply inline-block -rotate-2 rounded-sm border-2 px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wider;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
