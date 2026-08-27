@@ -122,3 +122,7 @@ Visit [http://localhost:3000](http://localhost:3000).
 | `npm run build` | Production build |
 | `npm run start` | Run the production build |
 | `npm run lint` | Lint the project |
+
+## Live Deployment
+
+https://personal-book-manager-taupe.vercel.app/
